@@ -1,3 +1,4 @@
+/* -------------------- BODY -------------------- */
 body {
     display: flex;
     align-items: center;
@@ -5,42 +6,53 @@ body {
     min-height: 100vh;
     background: linear-gradient(180deg, #4b0082 0%, #8e44ad 100%);
     color: #fff;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
 }
 
+/* -------------------- CONTAINER -------------------- */
 .container {
-    width: 780px;
+    width: 90%;
+    max-width: 780px;
+    min-width: 300px;
     border-radius: 20px;
     padding: 35px 40px;
     background: linear-gradient(145deg, #222, #000);
     box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
 
+/* -------------------- HEADER -------------------- */
 .container header {
     color: #b2b2b2;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 15px;
 }
 
 header h2 {
-    font-size: 1.6rem;
+    font-size: clamp(1.2rem, 2vw, 1.6rem);
 }
 
 header .column {
     display: flex;
     align-items: center;
+    margin-top: 10px;
 }
 
 header .column span {
     font-weight: 500;
     margin-right: 15px;
-    font-size: 1.19rem;
+    font-size: clamp(1rem, 1.5vw, 1.19rem);
 }
 
+/* -------------------- SLIDER -------------------- */
 .volume-slider input {
     -webkit-appearance: none;
     appearance: none;
-    width: 200px;
+    width: 150px;
+    max-width: 90%;
     height: 6px;
     background: linear-gradient(to right, #666 50%, #dcdcdc 50%);
     border-radius: 3px;
@@ -65,6 +77,7 @@ header .column span {
     border-radius: 3px;
 }
 
+/* -------------------- TOGGLE -------------------- */
 .keys-check input {
     width: 60px;
     height: 30px;
@@ -93,8 +106,11 @@ header .column span {
     background-color: #fff;
 }
 
+/* -------------------- PIANO -------------------- */
 .piano-keys {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     margin-top: 40px;
 }
 
@@ -105,62 +121,68 @@ header .column span {
     color: #a2a2a2;
     position: relative;
     text-transform: uppercase;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    padding-bottom: 10px;
+    transition: all 0.1s ease;
 }
 
+/* -------------------- TECLAS BRANCAS -------------------- */
 .piano-keys .white {
-    width: 70px;
+    flex: 1 1 8%;
+    max-width: 70px;
+    min-width: 40px;
     height: 230px;
     border: 1px solid #000;
     border-radius: 8px;
-    background: linear-gradient(
-        #fff 96%,
-        #eee 4%);
+    background: linear-gradient(#fff 96%, #eee 4%);
+    box-shadow: 2px 2px 6px rgba(0,0,0,0.2);
 }
 
+/* -------------------- TECLAS PRETAS -------------------- */
 .piano-keys .black {
-    width: 44px;
+    flex: 0 1 5%;
+    max-width: 44px;
+    min-width: 25px;
     height: 140px;
     z-index: 2;
-    margin: 0 -22px 0 -22px;
+    margin: 0 -2.5%;
     border: 1px solid #000;
     border-radius: 0 0 5px 5px;
-    background: linear-gradient(
-        #333,
-        #000);
+    background: linear-gradient(#333, #000);
+    box-shadow: 2px 2px 8px rgba(0,0,0,0.5);
 }
 
+/* -------------------- TEXTOS -------------------- */
 .piano-keys span {
-    position: absolute;
-    bottom: 20px;
+    font-size: clamp(0.9rem, 1.5vw, 1.13rem);
     width: 100%;
     text-align: center;
-    font-size: 1.13rem;
 }
 
 .piano-keys p {
-    position: absolute;
-    bottom: 10px;
+    font-size: clamp(0.5rem, 1vw, 0.6rem);
     width: 100%;
     text-align: center;
-    font-size: 0.6rem;
+    margin: 0;
 }
 
+/* -------------------- ESTADOS ATIVOS -------------------- */
 .piano-keys .white.active {
     box-shadow: inset -5px 5px 20px rgba(0,0,0,0.2);
-    background: linear-gradient(
-    to bottom
-    #fff 0%,
-    #eee 100%);
+    background: linear-gradient(to bottom, #fff 0%, #eee 100%);
+    transform: translateY(2px);
 }
 
 .piano-keys .black.active {
     box-shadow: inset -5px 5px 10px rgba(255,255,255,0.1);
-    background: linear-gradient(
-    to bottom
-    #000,
-    #434343);
+    background: linear-gradient(to bottom, #000, #434343);
+    transform: translateY(2px);
 }
 
+/* -------------------- OCULTAR TEXTOS -------------------- */
 .piano-keys .key.hide span,
 .piano-keys .key.hide p {
     display: none;
