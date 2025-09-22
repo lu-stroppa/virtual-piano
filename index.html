@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="src/styles/reset.css">
+    <link rel="stylesheet" href="src/styles/main.css">
+    <title>Piano Simulator</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h2>Virtual Piano</h2>
+            <div class="column volume-slider">
+                <span>Volume</span> <input type="range" id="volume" min="0" max="1" value="0.5" step="any">
+            </div>
+            <div class="column keys-check">
+                <span>Teclas</span> <input type="checkbox" checked>
+            </div>
+        </header>
+        <ul class="piano-keys">
+            <li class="key white" data-key="a"><span>a</span><p><br>(dó)</p></li>
+            <li class="key black" data-key="w"><span>w</span><p><br>(dó#)</p></li>
+            <li class="key white" data-key="s"><span>s</span><p><br>(ré)</p></li>
+            <li class="key black" data-key="e"><span>e</span><p><br>(ré#)</p></li>
+            <li class="key white" data-key="d"><span>d</span><p><br>(mi)</p></li>
+            <li class="key white" data-key="f"><span>f</span><p><br>(fá)</p></li>
+            <li class="key black" data-key="t"><span>t</span><p><br>(fá#)</p></li>
+            <li class="key white" data-key="g"><span>g</span><p><br>(sol)</p></li>
+            <li class="key black" data-key="y"><span>y</span><p><br>(sol#)</p></li>
+            <li class="key white" data-key="h"><span>h</span><p><br>(lá)</p></li>
+            <li class="key black" data-key="u"><span>u</span><p><br>(lá#)</p></li>
+            <li class="key white" data-key="j"><span>j</span><p><br>(sí)</p></li>
+            <li class="key white" data-key="k"><span>k</span><p><br>(dó)</p></li>
+            <li class="key black" data-key="o"><span>o</span><p><br>(Dó#)</p></li>
+            <li class="key white" data-key="l"><span>l</span><p><br>(ré)</p></li>
+            <li class="key black" data-key="p"><span>p</span><p><br>(ré#)</p></li>
+            <li class="key white" data-key="ç"><span>ç</span><p><br>(mi)</p></li>
+        </ul>    
+    </div>
+
+    <script src="src/scripts/slider.js" defer></script>
+    <script src="src/scripts/engine.js" defer></script>
+</body>
+</html>
